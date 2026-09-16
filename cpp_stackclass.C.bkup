@@ -1,0 +1,87 @@
+//This program is implementing stack functions
+//cpp_stackclass.C
+
+
+#include<iostream>
+using namespace std;
+
+class stack
+{
+	private:
+		int data[10];
+		int index;
+	public:
+		// constructor is seting index of stack
+		stack()
+		{
+			index = -1;	
+		}
+		
+		// function is Pushing data in stack
+
+		void push_stack(int value)
+		{
+			//is_full();
+
+			if (index <= 9)
+			{
+				index++;
+				data[index] == value;
+				cout << "Value " << value << " pushed into stack" << endl;
+			}
+		
+		}
+		
+		//function is popping data out of stack
+
+		int pop_stack(void)
+		{
+			//is_empty();
+			int pop_value;
+
+			pop_value = data[index];
+			cout <<"Debug" << index << pop_value <<endl;
+			index--;
+
+			return pop_value;
+		}
+	
+		// Function is checking if stack is full
+		int is_full(void)
+		{	
+			if (index > 9)
+			{
+				cout << "Stack is full! can't push more data" << endl;	
+			}
+			return index;
+		}
+
+		// Function is checking if stack is empty
+		int is_empty(void)
+		{	
+			if (index < 0)
+			{
+				cout << "Stack is empty! can't pop more data" << endl;	
+			}
+			return index;
+		}
+};
+
+
+int main()
+{
+
+	stack obj[10];
+	//obj[0].pop_stack();
+	obj[0].push_stack(52);
+	obj[0].push_stack(10);
+	obj[0].push_stack(12);
+	obj[0].push_stack(34);
+	obj[0].push_stack(525);
+
+	int pop = obj[0].pop_stack();
+	cout << "Value " << pop << " popped out of stack" << endl;
+
+//	cout << "Value " << obj[2].pop_stack() << " popped out of stack" << endl;
+return 0;
+}

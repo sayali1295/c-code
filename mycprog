@@ -1,0 +1,2258 @@
+#include <stdio.h>
+int main()
+
+{
+   printf("Program for sum of digits\n");
+   printf("Please enter a 3 digit number: \n");
+   int a;
+   scanf("%d", &a);
+
+   int b = a / 100;
+   int c = a % 100;
+   int d = c / 10;
+   int e = c / 10;
+
+   int f = b + e + d;
+
+   printf("THE SUM OF DIGITS OF A NUMBER: %d %d is", a, f);
+
+
+
+
+
+}
+
+#include<stdio.h>
+int main()
+{
+	
+	char a[] = "Pluto";
+
+	printf("%c", *(a+1));
+	printf("%c", *(1+a));
+	printf("%c", a[1]);
+	printf("%c", 1[a]);
+
+}
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+
+	int mystrlen(char []);//declaration
+	char array[]="Sayli";
+	//	{'S','a','l','i', '\0'};
+	int i=0;
+	while(array[i] != '\0')
+	{
+		printf("%c", array[i]);
+		i++;
+	}
+
+	printf("\nnew : %s",array);
+
+	printf("\nLength of str is %ld\n", strlen(array));
+	return 0;
+}
+
+
+int mystrlen(char arr[])
+{
+
+	int i=0;
+	
+	while(arr[i] != '\0')
+	{
+		i++;
+	}
+	return i;
+}
+#include<stdio.h>
+
+#ifdef int_array
+int main()
+{
+	int array[]= {12, 45, 65, 35, 69, 23};
+	int i = 0;
+
+	while(i < 6)
+	{
+		printf("%i\t", array[i]);
+		i++;
+	}
+}
+#endif
+
+
+#ifdef char_array1
+int main()
+{
+	char array[]= {'V', 'E', 'N', 'U', 'S'};
+	int i = 0;
+
+	while(i < 5)
+	{
+		printf("%c\t", array[i]);
+		i++;
+	}
+}
+#endif
+
+
+#ifdef char_array2
+int main()
+{
+	char array[] = {'M', 'A', 'R', 'S', '\0'};
+	int i = 0;
+
+	while(array[i] != '\0')
+	{
+		printf("%c\t", array[i]);
+		i++;
+	}
+}
+#endif
+
+#ifdef array_fun1
+int main()
+{	
+	
+	int find_strlength(char arr[]);
+
+	char arr1[] = {'S', 'A', 'T', 'U', 'R', 'N', '\0'};
+	char arr2[] = {"JUPITER"};
+	
+	int j = find_strlength (arr1);
+	int k = find_strlength (arr2);
+
+	printf("The length of array is: %i\n",j);
+	
+	printf("The length of string is: %i",k);
+
+	return 0;
+}
+int find_strlength (char arr[])
+{
+		int i = 0;
+		while(arr[i] != '\0')
+		{
+			i++;
+		} 		
+		return i;	
+}
+#endif
+
+
+
+#ifdef array_fun2
+
+
+int main()
+{
+        int  display_array (int arr[], int s);
+	printf("Integer array by function\n");
+
+	printf("Now, enter integer numbers to store in array:\n");
+	int i;
+	int array_int[5];
+
+	int size = sizeof(array_int)/sizeof(int);;
+
+	for(i = 0; i < size ; i++)
+	{
+		scanf("%d", &array_int[i]);
+	}
+
+	
+	int j = display_array (array_int, size);
+
+	return 0;
+}
+
+int display_array (int arr[], int s)
+{
+		int i = 0;
+
+		printf("The entered elements in array is given below\n");
+	
+		while(i < s)
+		{      
+			printf("%d\t", arr[i]);
+			i++;
+		}
+		return i;
+}
+
+#endif
+
+
+
+#ifdef array_fun3
+
+
+int main()
+{
+	char display_array (char arr[], int s);
+
+	printf("Array by function\n");
+	
+	int size;
+	printf("Please enter size of array:  ");
+	scanf("%i", &size);
+
+	printf("\nNow enter characters as per your given size:\n");
+
+	char array_character[size];
+
+	for(int i = 0; i < size; i++)
+	{
+		scanf(" %c", &array_character[i]);
+	}
+	
+	char j = display_array (array_character, size);
+
+
+	return 0;
+}
+
+char display_array (char arr[], int s)
+{
+	int i = 0;
+
+	printf("The entered characters in array is given below\n");
+	
+	while(i < s)
+	{      
+		printf("%c\t", arr[i]);
+		i++;
+	}
+	return i;
+}
+
+#endif
+
+#include<stdio.h>
+int main()
+{
+   char ch1 = 78;
+
+
+
+   printf("%c\n", ch1);
+}
+#include<stdio.h>
+int main()
+{
+   int a = 1;
+   char ch = 49;
+
+   printf("ascii value of 1 is: %d", ch);
+   return 0;
+}
+#include<stdio.h>
+int main()
+{
+
+   int num1, num2, var, flag;
+   char input;
+   
+   printf("Welcome to Mini Calculator\n");
+
+   while(1)
+   {//start
+        flag = 0;
+   	printf("Enter two numbers\n");
+   	scanf("%d%d", &num1, &num2);
+
+   	printf("\nPlease enter A for Addition, S for Subtraction, M for Multiplication & D for Division\n");
+   	scanf(" %c", &input);
+	
+   	switch(input)
+   	{
+	   
+       		case 'A':
+       		case 'a':
+	     		var = num1 + num2;
+			break;
+
+       		case 'S':
+       		case 's': 
+	        	var  = num1 - num2;
+			break;
+
+       		case 'M':
+       		case 'm':	
+	       		var = num1 * num2;
+			break;
+
+       		case 'D':
+       		case 'd':	
+			var = num1 / num2;
+			break;
+
+       		default:
+			printf("\nWrong input\n");
+			flag = 2;
+			break;
+   	}
+	if ( flag != 2)
+                printf("Result is %d\n", var);
+   }//end
+    
+   
+
+
+
+/*printf("Please enter on how many numbers operation is to be performed");
+scanf("%d", &n);
+
+for(int i = 0; i <= n-1; i++)
+{
+  scanf("%d", &)
+}*/
+
+return 0;
+
+
+
+}
+#include<stdio.h>
+
+//This program is to print amount after 30 days challenge of doubling 5 paisa and so on 
+
+int main()
+{
+
+#ifdef paisa
+
+   int i, days;
+   int total;
+   float paisa = 0.05;
+
+   printf("Please enter no. of days\n");
+   scanf("%d", &days);
+ 
+   for(i = 1; i <= days; i++)
+   {
+      total = paisa * (2 (i-1);
+   
+
+   printf("The total amount is: %d", total);
+
+}
+
+#endif
+
+//This program is to print no. of rice grains after 64 days challenge
+
+#ifdef chess
+
+   int i, days;
+   int total;
+   int rgrains = 1;
+
+   printf("Please enter no. of days\n");
+   scanf("%d", &days);
+ 
+   for(i = 1; i <= days; i++)
+   {
+      total = rgrains * 2 (i-1);
+   
+   }
+
+   printf("The total amount is: %d", total);
+
+#endif
+
+}
+
+
+#include<stdio.h>
+int main()
+{
+    printf("Program for finding circumference of a circle\n");
+    printf("Please enter a value of radius: ");
+
+    float r;
+    scanf("%f", &r);
+
+    float pie = 3.14; //using pie as 3.14
+
+    float circum = 2 * pie * r;
+
+    printf("The circumference of a circle is: %f", circum);
+
+}
+#include<stdio.h>
+#define PI 3.14
+int main()
+{
+	float circum_circle(float *);
+
+	float radius = 2.5;
+
+	float circum = circum_circle(&radius);
+
+	printf("The circumference of circle is: %.2f", circum);
+}
+
+
+float circum_circle(float *r)
+{
+	float c = 2 * PI * (*r);
+
+	return c;
+
+}
+#include<stdio.h>
+int main()
+{
+   for(int i = 1; i <= 2; i++)
+   {
+      for(int j = 1; j <=2; j++)
+      {
+	      if(i==j)
+		      continue;
+         	printf("%d\t%d\n", i , j);
+      
+      }
+   
+   
+   
+   }
+
+
+}
+#include<stdio.h>
+int main()
+{
+   int i = 0;
+
+   while(i <= 6)
+   {
+      if(i == 3)
+      {
+        i++;
+	continue;
+      }
+    printf("%d", i);
+    i++;
+   
+   }
+
+}
+#include<stdio.h>
+int main()
+{
+
+	int i,j,x,y;
+	for(i = 0; i<=10; i++)
+         {
+	    for(j = i; j >0; j--)
+	       {
+		  printf(" ");
+	       }
+		
+		printf("*\n");
+        	}
+
+	for(x =10; x>0; x--)
+	{
+	  for(y=x; y>0; y--)
+	  {
+	  
+	  printf(" ");
+	  }
+
+	  printf("*\n");
+	}
+
+return 0;
+
+}
+
+
+
+
+
+#include<stdio.h>
+#define SIZE 10
+int main()
+{
+int i,j,k,g,x,y;
+int d,e,s,t;
+    for(i = 0; i <= SIZE-5; i++)
+    {
+       for(j = i ; j >= 0; j--)
+       {
+	 if(j>0)
+	 {
+           printf(" ");
+	 }
+	 else
+	 {
+	   printf("*");
+
+	   for( s = i ; s <= SIZE; s++)
+	   {
+	      for(t = s; t < SIZE; t++)
+	      {
+	        printf(" ");
+	      } 
+	    //  if (t!=SIZE)
+	      
+	      printf("*\n");
+	      
+	   }
+
+	 } 
+
+
+
+
+
+
+
+
+
+
+       }
+    /*   for(d = 5; d <= 0; d++)
+       {
+         for(e = d; e >= 0; e--)
+
+	 {
+	   printf(" ");
+	 }
+
+	 printf("*\n");
+       }*/
+    }
+
+
+
+
+
+
+
+/*    for(k = SIZE; k > 0; k--)
+    {
+       for(g = k-1; g > 0 ; g--)
+       {
+         printf(" ");
+       
+       } 
+     printf("*");
+
+     for(x = k; x >= 0; x++)
+      {
+         for(y = x; y <= k; y++)
+	 {
+	    printf(" ");
+	 }
+	 printf("*\n");
+      }
+    }
+
+      
+
+
+
+*/
+return 0;
+}
+
+#include<stdio.h>
+int main()
+{
+    printf("Reversing the digits of a number \n");
+    printf("Please enter a 4 digit number: ");
+    int num;
+    scanf("%d", &num);
+
+    int new_num = 0;
+
+    while(num>0){
+
+    int digit = num % 10;
+    new_num = new_num * 10 + digit;
+    num = num / 10; 
+    }
+    printf("The number after reversal is: %d", new_num);
+   
+}
+
+#include<stdio.h>
+int main()
+{
+    // printf("Program for sum of digits\n");
+     printf("Program for reversal of digits\n");
+     printf("Please enter a 4 digit number: ");
+     int num;
+     scanf("%d", &num);
+
+     int a = num % 10;
+     num = (num - a) / 10; 
+
+
+     
+     int b = num % 10;
+     num = (num - b) / 10;
+
+     int c = num % 10;
+     num = (num - c) /10;
+
+     int d = num % 10;
+
+    // int sum = a + b + c + d;
+
+     //printf("The sum of digits of a number is: %d", sum);
+     
+     int reverse = a * 1000 + b * 100 + c * 10 + d * 1;
+
+     printf("The reverse of a number is: %d", reverse);
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+#include <stdio.h>
+int main()
+{
+
+        int i,j,s=0;
+	for(i=20; i >= 0; i--)
+        {
+		for (int j = i ; j >= 0; j--)
+		{
+			printf(" ");
+		}
+		printf("*");
+
+		for (int k = s*2; (k) >= 0 ; k--)
+		{
+			printf(" ");
+		}
+		printf("*\n");
+		s++;
+
+	}
+	for(int i = 0; i <= 20*2 ; i++)
+		printf("*");
+}
+
+#include<stdio.h>
+int main()
+{
+   printf("Maths Grade Calculator\n");
+   printf("Please enter the marks of 4 students \n");
+
+   int m1;
+   scanf("%d", &m1);
+   printf("Student 1 mark collected as: %d", m1);
+
+   int m2;
+   scanf("%d", &m2);
+   printf("Student 2 mark collected as: %d", m2);
+
+   int m3;
+   scanf("%d", &m3);
+   printf("Student 3 mark collected as: %d", m3);
+
+   int m4;
+   scanf("%d", &m4);
+   printf("Student 4 mark collected as: %d\n", m4);
+
+   char grade1, grade2, grade3, grade4;
+   
+   if(m1>=90)
+   {
+      grade1 = 'A';
+   } 
+   else if(m1>=75)
+      {
+        grade1 = 'B';
+      }
+   else if (m1>=50)
+      {
+        grade1 = 'C';
+      } 
+   else
+   {
+       grade1 = 'D';
+   }
+
+   if (m2>=90)
+   {
+      grade2 = 'A';
+   }
+   else if(m2>=75)
+   {
+       grade2 = 'B';
+   }
+   else if(m2>=50)
+   {
+       grade2 = 'C';
+   }
+   else
+   {
+       grade2 = 'D';
+   }
+
+  if (m3>=90)
+  {
+      grade3 = 'A';
+  }
+  else if(m3>=75)
+  {
+     grade3 ='B';
+  }
+  else if (m3>=50)
+  {
+    grade3 = 'C';
+  }
+  else
+  {
+     grade3 = 'D';
+  }
+
+  if (m4>=90)
+  {
+    grade4 = 'A';
+  }
+  else if (m4>=75)
+  {
+    grade4 ='B';
+  }
+  else if (m4>=50)
+  {
+     grade4 = 'C';
+  }
+  else
+  {
+    grade4 = 'D';
+  }
+ 
+    printf("The grade of student 1 is: %c\n", grade1);
+    printf("The grade of student 2 is: %c\n", grade2);
+    printf("The grade of student 3 is: %c\n", grade3);
+    printf("The grade of student 4 is: %c\n", grade4);
+  }
+#include<stdio.h>
+int main()
+{
+     
+#ifdef for1
+
+	for(int i=0 ; i<=10 ; i++)
+	{   
+         	printf("%d\n",i);       
+    	}
+#endif
+
+#ifdef for2
+         
+	int i = 0;
+	for(; i<=10 ; i++)
+	{
+	  printf("%d\n", i);
+	}
+#endif
+
+#ifdef for3
+        
+        int i = 0;
+	for(; i<=10; )
+	{
+	   printf("%d\n", i);
+	   i++;
+	}
+#endif
+
+#ifdef for4
+
+	int i = 0;
+	 for(;;)
+	 {
+	     if(i<=10)
+	       {
+                 printf("%d\n", i);
+	         i++;
+	       }
+	     else
+	     {
+	       break;
+	     }
+	 }
+#endif
+
+#ifdef for5
+	 int i = 0;
+	 for(; ; i++)
+	 {
+	   if(i<=10)
+	   {
+	     printf("%d\n", i);
+	   }
+	   else
+	   {
+	     break;
+	   }
+	 }
+#endif
+
+#ifdef forP1
+         
+	 for(int i = 0; i<=10 ; i++)
+	 {
+	     printf("-");
+	 
+	 }
+#endif
+
+#ifdef forP2
+
+          for(int i = 0; i<=10 ; i++)
+	  {
+	    printf("|\n");
+	  
+	  }
+#endif
+
+
+#ifdef forP3
+         
+	  for(int i = 0; i<=10; i++)
+	  {
+	     
+		  
+		  printf("*\n");
+	  }
+#endif
+
+
+
+
+
+
+
+}
+#include<stdio.h>
+#define PI 3.14
+
+float circum (float r)
+{
+    float result = 2 * PI * r;
+    return result;
+}
+
+int main()
+{
+  float c = circum(2.5);
+  printf("The circumfere
+		  nce of a circle is: %.2f", c);
+}
+#include<stdio.h>
+int main()
+{
+	int sum (int a, int b);
+    	int j = sum(10, 20);
+    	printf("The sum is: %d", j);
+   
+} 
+  
+int sum (int a, int b)
+{	
+  int result = a + b;
+  return result;
+}
+#include<stdio.h>
+
+//This program is to print amount after 30 days challenge of doubling 5 paisa and so on 
+
+int main()
+{
+   int i, days;
+  // int total;
+  // float paisa = 0.05;
+
+ //  printf("Please enter no. of days\n");
+ //  scanf("%d", &days);
+ 
+   int k = power (n-1);
+}
+int power (int i)
+{
+   for(int n = 1; n > 0 ; n++)
+   {
+        printf("i %d\n", i);	  
+    
+	 //  total = paisa * (2 (i-1);
+   
+   }
+
+  // printf("The total amount is: %d", total);
+}
+
+#include<stdio.h>
+int main()
+{
+   int math,sci,eng,sst;
+   float total;
+   float percent;
+   char grade;
+
+   printf("Grades calculator\n");
+   printf("Please enter the marks of 4 subjects: Maths, Sci, Eng & Sst out of 100 \n");
+
+   scanf("%d", &math);
+   printf("Marks of maths : %d", math);
+   scanf("%d", &sci);
+   printf("Marks of Science : %d", sci);
+   scanf("%d", &eng);
+   printf("Marks of english : %d", eng);
+   scanf("%d", &sst);
+   printf("Marks of sst : %d\n\n", sst);
+
+
+   total = math + sci + eng + sst;
+   percent = ((total / 400) * 100);
+
+   printf("The total of all marks: %f\n", total);
+   printf("The percentage of student is: %f\n", percent);
+
+   if(percent >= 90)
+   {
+    grade = 'A';
+    printf("Well done! you got grade : %c", grade);
+   } 
+   else if (percent >= 75)
+   {
+    grade = 'B';
+    printf("Good! you got grade : %c", grade);
+   }
+   else if (percent >= 40)
+   {
+     grade = 'C';
+     printf("You got grade : %c", grade);
+   }
+   else
+   {
+     grade = 'D';
+     printf("Work hard!, you got grade : %c", grade);
+   }
+}
+#include <stdio.h>
+
+int main()
+
+/*	//int i;
+	//i = 20;
+	//int k = printf("Hello");
+	//int j = 90;
+	//printf("Printf is going to return %d bytes", k);
+*/	
+/*     int a = 10;
+       int b = 20;
+       int c;
+       printf("Swapping the numbers\n");
+       c = a;
+       a = b;
+       b = c;
+       printf("After swapping, the number in a is %d and the number in b is:%d",a, b);
+*/
+
+{
+     int a = 50;
+     int b = 13;
+         a = a + b;
+         b = a - b;
+	 a = a - b;
+     printf("After swapping the value in a is %d and the value in b is %d", a, b);
+}	
+
+#include <stdio.h>
+int main()
+{
+
+        int i,j,s=0;
+	for(i=10; i >= 0; i--)
+        {
+		for (int j = i ; j >= 0; j--)
+		{
+			printf(" ");
+		}
+		printf("*");
+
+		for (int k = s; k >= 0 ; k--)
+		{
+			printf(" ");
+		}
+		printf("*\n");
+		s++;
+
+	}
+	for(int i = 0; i <= 10 ; i++)
+		printf("*");
+}
+
+#include<stdio.h>
+#define SIZE 5
+int main()
+{
+           int i,j;
+	for(i=0; i <= SIZE ; i++)
+         {
+	   for(j = i; j>0; j--)
+	   {
+	     if((j==i) || (i==SIZE))
+	      {
+	       printf("*");
+	      }
+	     else
+	      {
+	       printf(" ");
+	      }
+	   }
+	  printf("*\n");
+	}
+
+return 0;
+
+}
+
+
+#include<stdio.h>
+int main()
+/*{
+   if (-1)
+   {
+   	printf("Hi");
+   } 
+   else 
+   {
+   	printf("hello");
+   }
+}*/
+{
+	if (printf("Hello"))
+      {
+         printf("Hi");
+      }
+      else
+      {  
+         printf("Hello");
+      }
+ }
+#include<stdio.h>
+#define SIZE 20
+int main()
+{
+   int i,j,k,y,z = 0;
+
+    for(i = 0; i <= SIZE*2; i++// top line)
+     {
+       printf("*");
+     }
+    printf("\n");
+     
+    for(j = 0; j <= SIZE-1; j++)
+    {
+        for(k = j; k >= 0; k--)
+         {
+            printf(" ");
+         }
+	    printf("*");
+
+	if(j < SIZE-1)
+	 {
+	        
+	for(y = z; y <= (2*SIZE-4); y++)
+          {
+	      printf(" ");
+          } 
+	      printf("*\n");
+	      z=z+2;
+         }
+     } 
+
+return 0;
+}
+#include<stdio.h>
+#define SIZE 10
+int main()
+{
+	int i,j,k,g;
+
+	for(k=0; k<=SIZE; k++)
+	{
+	   printf("* ");
+	}
+           printf("\n");
+
+	for(i = 0; i<=10; i++)
+      	{
+	    for(j = i; j >= 0; j--)
+	      {
+		 printf(" ");
+	      }
+		
+	   printf("*");
+
+                 for(g = i; g <= (SIZE-3); g++)
+		 {
+		    printf(" ");
+		 }
+           printf("*\n");
+
+       	}
+
+				
+	return 0;
+
+}
+
+
+
+
+#include<stdio.h>
+#define SIZE 10
+int main()
+{
+	int i,j,k,g;
+
+	for(k=0; k <= SIZE+1; k++)
+	{
+	   printf("*");
+	}
+           printf("\n");
+
+	for(i = 0; i<=10; i++)
+      	{
+	    for(j = i; j >= 0; j--)
+	      {
+		 printf(" ");
+	      }
+		
+	   printf("*");
+                   
+            for(g = i; g < SIZE-1 ; g++)
+	      {
+	         printf(" ");
+	      }   
+	
+    	    if(i!=SIZE)
+	      {
+		 printf("*\n");
+              }
+       	}				
+	return 0;
+}
+
+
+
+
+#include<stdio.h>
+#define SIZE 10
+int main()
+{
+	int i,j,k;
+
+       for(k=0; k<=SIZE; k++)
+         {
+	    printf("*");
+	 }
+            printf("\n");
+
+       for(i = SIZE; i >= 0 ; i--)
+         {
+           for(j = i; j > 0; j--)
+             {
+               if(j == i)
+	       {
+	         printf("*");
+	       }
+	       else
+	       {
+	         printf(" ");
+	       }
+	     }
+
+           printf("*\n");
+             }
+return 0;
+}
+#include<stdio.h>
+int main()
+{
+      printf("Program for finding the largest number");
+      printf("Please enter three numbers\n");
+
+      int a,b,c;
+      scanf("%d%d%d", &a,&b,&c);
+
+      if (a>b)
+      {
+        if(a>c)
+	 {
+	   printf("The largest number is: ", a);  
+	 }
+      }	
+      else if (b>c)
+         {
+           printf("The largest number is: ", b);  
+         }      
+      else 
+      {
+           printf("The largest number is: ", c);
+      }
+}
+#include<stdio.h>
+int main()
+{
+   int a, b, c;
+   printf("Please enter 3 numbers: \n");
+   scanf("%d%d%d", &a, &b, &c);
+
+   if((a>b) && (a>c))
+   {
+      printf("The largest number is: %d", a);
+
+   } if ((b>a) && (b>c))
+   {
+      printf("The largest number is: %d", b);
+   } 
+   else 
+   {
+      printf("The largest number is: %d", c);
+   }
+
+}
+#include<stdio.h>
+int main()
+{
+    printf("Program for finding the largest number\n");
+    printf("Please enter three numbers: \n");
+
+    int a,b,c;
+    scanf("%d%d%d", &a,&b,&c);
+
+    if (a>b)
+    {
+      if (a>c)
+      {
+         printf("The largest number is: %d", a);
+      }
+    }
+    else if (b>c)
+    {
+         printf("The largest number is: %d", b);
+    }
+    else
+    {
+         printf("The largest number is: %d", c);
+    }
+}
+#include <stdio.h>
+int main()
+{
+	int  j=90;
+
+#ifdef  Value
+
+	j = 30;
+
+#endif
+
+#ifdef   logic
+	j=100;
+#endif
+
+	printf("Value is %d", j); 
+	return 0;
+}
+
+#include<stdio.h>
+int main()
+{
+   int n;
+   int num1, num2;
+   char input;
+   
+   printf("Welcome to Mini Calculator\n");
+
+   printf("Please enter A for Addition, S for Subtraction, M for Multiplication & D for Division\n");
+   scanf("%c", &input);
+   
+
+   printf("Enter two numbers\n");
+   scanf("%d%d", &num1, &num2);
+
+   if((input == 'A') || (input == 'a'))
+   {
+	  int a = num1 + num2;
+	  printf("The result is: %d", a);
+   }
+   else if((input == 83) || (input == 115))
+   {
+	  int s = num1 - num2;
+	  printf("The result is: %d", s);
+   }
+   else if((input == 77) || (input ==109))
+   {
+          int m = num1 * num2;
+	  printf("The result is: %d", m);
+   }
+   else if((input == 68) || (input == 100))
+   {
+	  int d = num1 / num2;
+	  printf("The result is: %d", d);
+   }
+   else
+   {
+          printf("Wrong input");
+   }
+
+/*printf("Please enter on how many numbers operation is to be performed");
+scanf("%d", &n);
+
+for(int i = 0; i <= n-1; i++)
+{
+  scanf("%d", &)
+}*/
+
+
+
+
+
+return 0;
+
+
+
+}
+#include<stdio.h>
+int main()
+{
+   printf("Multiplication Table \n");
+
+    int i, j;
+    for (i = 1; i <= 10; i++) 
+    {
+        for (j = 2; j <= 10; j++) 
+	{
+	    int k = i*j;
+	     
+            printf("%d ", k);
+        }
+	printf("\n");
+    }
+
+    return 0;
+}
+
+
+
+#include<stdio.h>
+int main()
+{
+
+#ifdef Horz  
+
+	for(int i =0; i<=10, i++)
+	{
+	   printf("*");
+	}
+#endif
+
+
+#ifdef Vert
+
+	for(int i = 0; i<= 10; i++)
+	{
+	  printf("*\n");
+	}
+#endif
+
+#ifdef slantL
+
+	for(int i = 5; ;)
+	{
+	  if (i>0)
+	  {
+	     printf("*");
+	     i--;
+	  }
+	  else
+	  {
+	     break;
+	  }
+           printf(" ");
+	}
+#endif
+
+#ifdef slantR
+
+    int n = 5; // Size of the line
+    for (int i = 1; i <= n; i++) 
+    {
+        for (int j = 1; j <= n; j++) 
+	{
+            if (i == j) 
+	    {
+                printf("*");
+            }
+	    else 
+	    {
+                printf(" ");
+            }
+        }
+        printf("\n");
+    }
+#endif	
+
+}
+
+#include<stdio.h>
+#include<string.h>
+
+struct emp 
+{
+	char name[10];
+	int age;
+        int weight;
+	float height;	
+};
+
+int main()
+{
+
+	typedef struct emp user_t;
+     
+	user_t *z, e[10];
+
+	int i = 1;
+        z = &e[i];
+
+	int input;
+
+	printf("Program for managing student record\n\n");
+
+	printf("Press 1 : Adding Record\nPress 2: Deleting Record\nPress 3: Viewing Record\nPress 4: Modifying record\nPress 5: Recovering Record\n");
+	scanf("%i", &input);
+
+	switch(input)
+	{
+		case 1: printf("Adding a New Record\n");
+
+			printf("Please enter your name, age, weight & height(in ft.)\n");
+
+			scanf("%s%i%i%f", &z->name[0], &z->age, &e[i].weight, &e[i].height);
+
+			printf("Data recorded successfully\n");
+			
+			printf("Recorded data is: %s\t%i\t%i\t%.1f", e[i].name, e[i].age, e[i].weight, z->height);
+			i++;
+	}
+}
+#include<stdio.h>
+int main()
+{
+
+#ifdef solid
+	for(int i = 0; i<=10; i++)
+        {
+           for(int j = i; j>0; j--)
+             {
+	         printf("*");
+             }
+        
+	  printf("*\n");	  
+        }
+#endif
+
+
+
+#ifdef hollow
+           int i,j;
+	for(i=0; i <= 10; i++)
+         {
+	   for(j = i; j>0; j--)
+	   {
+	     if((j==i) || (i==10))
+	      {
+	       printf("*");
+	      }
+	     else
+	      {
+	       printf(" ");
+	      }
+	   }
+	  printf("*\n");
+	}
+#endif
+
+
+#ifdef hollow1
+	int i,j;
+       
+	for( i = 10; i>0; i--)
+	{
+	  for( j = i; j>0; j--)
+	  {
+	    
+
+return 0;
+
+}
+#include<stdio.h>
+int main()
+{
+#ifdef logic1   
+	
+   char ch = 1;
+                           //o/p as -127 to 128
+
+   for(; ch > 0; ch++)
+   {
+	   printf("%d\t", ch);
+   };
+
+
+   printf("The minimum value of character is: %d", ch);
+   ch--;
+   
+   printf("The maximum value of character is: %d", ch);
+#endif
+
+
+#ifdef logic2
+   
+   unsigned char ch = 1;
+                           //o/p as 0 to 255
+
+   for(; ch > 0; ch++)
+   {
+	   printf("%d\t", ch);
+   };
+
+
+   printf("The minimum value of character is: %d", ch);
+   ch--;
+   
+   printf("The maximum value of character is: %d", ch);
+
+#endif
+
+
+}
+
+
+
+
+#include<stdio.h>
+int main()
+{
+   float i;
+   while (i > 0)
+   {
+     i++;
+   }
+   printf("Min range of float is: %f", i);
+   i--;
+}
+#include<stdio.h>
+int main()
+{
+   int i=0;
+   for(; i >= 0; i++);
+   printf("Minimum range is %d", i);
+   i--;
+
+   printf("\nMax range is %d", i);
+
+
+}
+#include<stdio.h>
+#include<string.h>
+
+struct emp 
+{
+	char name[10];
+	int age;
+        int weight;
+	float height;	
+};
+
+int main()
+{
+
+	typedef struct emp user_t;
+	typedef int number;
+	number t=89;
+	printf("value \t%d\n",t);
+		
+     //   char str[10];
+     
+	user_t *z, e1[10];
+        z = &e1;
+
+	int i = 1;
+	int input;
+
+/*	char s = "SrNo";
+	char t = "NAME";
+	char u = "AGE";
+	char v = "WEIGHT";
+	char p = "HEIGHT";*/
+	
+	printf("Program for managing student record\n\n");
+
+	printf("Press 1 : Adding Record\nPress 2: Deleting Record\nPress 3: Viewing Record\nPress 4: Modifying record\nPress 5: Recovering Record\n");
+	scanf("%i", &input);
+
+	switch(input)
+	{
+		case 1: printf("Adding a New Record\n");
+
+			printf("Please enter your name, age, weight & height(in ft.)\n");
+		//	scanf("%s", &str[0]);
+		//	strcpy(z->name, str);
+		//	scanf("%i%i%f", &z->age, &z->weight, &z->height);
+
+			scanf("%s%i%i%f", &e1[i]->name, &e1[i]->age, &e1[i]->weight, &e1[i]->height);
+		//	printf("%s\t%s\t%s\t%s\t%s\n", s, t, u, v, p);
+
+			printf("Data recorded successfully\n");
+		//	printf("Recorded data is: %s\t%i\t%i\t%.1f", z->name, z->age, z->weight, z->height);
+			
+			printf("Recorded data is: %s\t%i\t%i\t%.1f", &e1[i]->name, &e1[i]->age, &e1[i]->weight, &e1[i]->height);
+			i++;
+	}
+}
+
+
+#include<stdio.h>
+int main ()
+{
+    printf("Program for finding simple interest\n");
+    int p;
+    float n, r; 
+
+    printf("Please enter the value of loan amount: \n");
+    scanf("%d", &p);
+
+    printf("Now, enter for how many number of years you took an amount: \n");
+    scanf("%f", &n);
+
+    printf("Now, enter the rate of interest for your loan amount: \n");
+    scanf("%f",&r);
+
+    float simp_int = (p * n * r) / 100;
+
+    printf("The simple interest calculated as: %f", simp_int);
+}
+#include<stdio.h>
+int main()
+{
+	for(int i = 0; i<=10; i++)
+           	{
+		for(int j = i; j >0; j--)
+		   {
+			printf(" ");
+	       	}
+		
+		printf("*\n");
+        	}
+
+				
+	return 0;
+
+}
+
+
+
+
+#include<stdio.h>
+int main()
+{ 
+	int size =10;
+	for(int i = 0; i<=10; i++, size--)
+	{
+		for(int j = size; j > 0; j--)
+		{
+			printf(" ");
+		}
+		printf("*\n");
+	}
+
+				
+	return 0;
+}
+#include<stdio.h>
+int main()
+{
+  // int size = 10;
+	for(int i = 10; i >0 ; i--)
+   {
+
+     for(int j = i; j>0; j--)
+     {
+         printf(" ");
+     }
+
+
+      printf("*\n");
+   
+   
+   }
+
+}
+#include<stdio.h>
+int main()
+{
+	for (int i=0; i<=10; i++)
+	{
+			printf("*");
+
+			for(int j=0; j<=10; j++)
+			{
+				if((i==0) || (i==10))
+					printf("*");
+				else
+					printf(" ");
+			}
+
+			printf("*\n");
+
+	}
+	
+
+}
+
+
+
+
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+	
+	char str_concat (char[], char[]);
+
+	char array1[20];
+	char array2[10];
+
+	printf("Program for String Concatenation\n");
+
+	printf("Please insert a first string having less than 10 alphabets\n");
+	scanf("%s", &array1[0]);
+
+
+	printf("Please insert a second string having less than 10 alphabets\n");
+	scanf("%s", &array2[0]);
+
+	//strcat(array1, array2); normal way concatenation
+	
+	str_concat(array1, array2);
+
+	printf("String after concatenation is: %s", array1);
+}
+
+
+char str_concat (char str1[], char str2[])
+{	
+	int i = 0;
+
+	while (str1[i] != '\0') i++;
+	
+	int j = 0;
+
+	while(str2[j] != '\0')
+	{
+		str1[i] = str2[j];
+		j++;
+		i++;	
+	}
+
+	str1[i] = '\0';
+} 
+#include<stdio.h>
+int main()
+{
+
+	void mystr_copy (char[], char[]);
+
+	char arr_source[7];
+	char arr_dest[7];
+
+	printf("Program for copying String\n");
+
+	printf("Please enter a word having 6 alphabets\n");
+	scanf("%s", &arr_source[0]);
+
+//	int size = sizeof (arr_source) / sizeof (arr_source[0]);
+//	printf("size = %d", size);
+
+	mystr_copy(arr_source, arr_dest);
+
+	printf("String copied is : %s", arr_dest);
+}
+
+void mystr_copy (char str1[], char str2[])
+{
+	int i = 0;
+	while(str1[i] != '\0')
+	{
+		str2[i] = str1[i];
+		i++;
+	}
+	str2[i]= '\0';
+
+}
+
+#include<stdio.h>
+
+//Program of struture by taking i/p from user
+
+struct emp
+{
+   char name;
+   int age, weight;
+};
+
+int main()
+{
+   typedef struct emp user;
+   user a;
+	   
+      printf("Please enter your name, age and weight\n");
+      scanf("%c%d%d", &a.name, &a.age, &a.weight);
+      
+      printf("Hello User, Your name I stored is: %c", a.name);
+
+      printf(", age is: %d", a.age);
+
+      printf(" & weight is: %d\n", a.weight);
+
+      return 0;
+
+}
+
+#include<stdio.h>
+
+struct emp
+{
+   int i;
+   int j;
+   char h;
+};
+
+int main()
+{
+ typedef struct emp user;
+
+  user e;
+  e.i = 10;
+  e.j = 20;
+  e.h = 'A';
+  
+  printf("The value of h is : %c\n", e.h);
+  printf("The value of i is: %d\n", e.i);
+  
+  printf("The value of j is: %d\n", e.j);
+
+  sizeof (e.i);
+  sizeof (e.j);
+
+  printf("The size of i is: %d\n", e.i);
+
+  printf("The size of j is: %d\n", e.j);
+
+  printf("The size of 10 is: %ld\n", sizeof (10));
+
+  printf("The size of 20 is: %ld\n", sizeof (20));
+
+  printf("The size of A is: %ld\n", sizeof ('A'));
+
+  printf("The size of h is: %ld\n", sizeof (e.h));
+
+  printf("The size of user is: %ld\n", sizeof (user));
+
+
+
+
+return 0;
+}
+#include<stdio.h>
+
+struct emp
+{
+   char name;
+   int age;
+   int weight;
+   float height;
+   int is_deleted;
+};
+
+
+int main()
+{
+   typedef struct emp user;
+   user z[5];
+  
+   printf("Program to keep record of a student\n");
+   
+   int i = 1;
+   int j;
+   char count = 'C';
+   char name = 'N';
+   char age = 'A';
+   char weight = 'W';
+   char height = 'H';
+   char ch;
+
+   while(1)
+   {
+      printf("\nPlease enter 1 to Add a record, 2 to Delete, 3 to View, 4 to Modify, 5 to Recover & 6 to exit\n\n");
+      scanf(" %d", &j);
+
+      if (!((j <= 6) && (j >= 1)))
+      {
+	printf("please enter valid data\n");
+	scanf(" %c", &ch);
+      	continue;
+      }
+
+          switch(j)
+           {
+              case 1:    //adding record
+		          printf("Adding a new Record\n\n");
+		          printf("Hello user, please enter your name, age, weight & height in foot\n");
+                          scanf(" %c%d%d%f", &z[i].name, &z[i].age, &z[i].weight, &z[i].height);  
+		          printf("Data recorded successfully\n");
+			  z[i].is_deleted = 0;
+			  i++;
+			  break;
+
+	      case 2:    //deleting record
+			  printf("\n%c\t%c\t%c\t%c\t%c\n", count, name, age, weight, height);
+			  int flag1 = 0;
+
+			  for(int x = 1; x < i; x++)
+			    {
+				if (z[x].is_deleted == 0) // 0 - not deleted
+				  {			
+			            flag1 = 1;  
+			            printf("%d\t%c\t%d\t%d\t%.1f\n", x, z[x].name, z[x].age, z[x].weight, z[x].height);
+				  }
+			    } 
+			    if (flag1 == 1)
+			    {		    
+	                      printf("Please tell me, which record to delete among above\n");
+                              int k;
+	                      scanf("%d", &k);
+                               
+			        if((k <= 5) && (k >= 1))
+				{
+			          z[k].is_deleted = 1;//1 deleted
+			          printf("Your record deleted successfully\n");
+				}
+                                else 
+			        { 
+			          char ch;
+				  scanf("%c", &ch); 
+			          printf("Wrong input, try again with correct input\n");
+				  continue;
+			        }
+			     }
+			    else
+			    	printf("\nNo Record to delete\n");
+			        break;
+			 
+
+	      case 3:     //Viewing record
+			   printf("Viewing records\n\n");
+
+			   printf("%c\t%c\t%c\t%c\t%c\n", count, name, age, weight, height);
+   
+
+                            for (int p = 1; p < i; p++)
+			    {
+		             if (z[p].is_deleted == 0)  //  0 - not deleted
+			     	printf("%d\t%c\t%d\t%d\t%.1f\n", p, z[p].name, z[p].age, z[p].weight, z[p].height);
+			    }
+			   
+		           break;
+
+	      case 4:     //Modifying record 
+                           
+			   printf("%c\t%c\t%c\t%c\t%c\n", count, name, age, weight, height);
+
+			   for(int a = 1; a < i; a++)
+			    { 
+			       if (z[a].is_deleted == 0) // 0 - not deleted
+			       printf("%d\t%c\t%d\t%d\t%.1f\n", a, z[a].name, z[a].age, z[a].weight, z[a].height);
+			    }
+			    while(1)
+			    {
+	                    printf("Please tell me, which record to modify among above\n");
+                            int q;
+	                    scanf("%d", &q);
+                              
+			    if ((q <= 5) && (q >= 1))   //if1 start
+			    {
+
+			      printf("Now, tell me which field from record to be modified\n");
+
+			      printf("1 name, 2 age, 3 weight, 4 height?\n");
+
+                              int r;
+			      scanf("%d", &r);
+
+				if ((r <= 4) && (r >= 1))   // if2 start
+				{
+                                   		switch(r)
+			            		 {
+			                 		case 1: printf("New name added is: \n"); 
+						 	scanf(" %c", &z[q].name);
+				                 	break;
+
+			                 		case 2: printf("New age added is: \n");
+						 	scanf("%d", &z[q].age);
+				                 	break;
+
+			                 		case 3: printf("New weight added is: \n");
+						 	scanf("%d", &z[q].weight);
+				                 	break;
+
+			                 		case 4: printf("New height added is: \n");
+						 	scanf("%f", &z[q].height);
+			 	                 	break;
+			       	     		}//switch end
+
+				 }    //if2end
+				 else
+				 {
+				    char if2;
+				    scanf("%c", &if2);  
+			            printf("Wrong input, Try again with correct input\n");
+				    continue;
+			
+				 } //else2 end
+				   
+
+			   
+
+                                  printf("Modification DONE successfully\n\n");
+		                  printf("The record after modification is given below\n");
+                                  
+			          printf("%c\t%c\t%c\t%c\t%c\n", count, name, age, weight, height);
+                                  
+				  for(int b = 1; b < i; b++)
+				  {
+			             if (z[b].is_deleted == 0) // 0 - not deleted
+					  printf("%d\t%c\t%d\t%d\t%.1f\n", b, z[b].name, z[b].age, z[b].weight, z[b].height);
+				  }
+		                  
+                              
+			      break;
+
+			    }
+			else
+			 {
+		           char if1;
+			   scanf("%c", &if1);
+			   printf("Pressed wrong key, please give me correct input\n");
+			 }  //else1 end
+	     }// while end
+    
+              case 5:     //Recovering record
+		           printf("Showing deleted records\n");
+
+			   printf("%c\t%c\t%c\t%c\t%c\n", count, name, age, weight, height);
+                            
+			   for(int t = 1; t < i; t++)
+			   {
+			     if (z[t].is_deleted == 1) //- 1 deleted
+			     printf("%d\t%c\t%d\t%d\t%.1f\n", t, z[t].name, z[t].age, z[t].weight, z[t].height);
+			   }
+
+                           printf("Now, select which record to recover?\n");
+			   int v;
+			   scanf("%d", &v);
+                              
+                           if (z[v].is_deleted == 1)
+                           {
+
+			     	switch(v)
+			     	{
+				 	case 1: z[v].is_deleted = 0; 
+                                         printf("Your record recovered successfully\n");
+					 break;
+
+			         	case 2: z[v].is_deleted = 0;
+                                         printf("Your record recovered successfully\n");
+					 break;
+
+				 	case 3: z[v].is_deleted = 0;
+                                         printf("Your record recovered successfully\n");
+					 break;
+
+				 	case 4: z[v].is_deleted = 0;
+                                         printf("Your record recovered successfully\n");
+					 break;
+
+				 	case 5: z[v].is_deleted = 0;
+                                         printf("Your record recovered successfully\n");
+					 break;
+			     	}//switch close
+                               //break;
+
+                          }
+
+                          else  
+		  	  {	
+			             printf("Sorry You have entered wrong input\n");
+				     break;
+			  }
+
+	      case 6:     //exit
+		          printf("You are exited.\n");
+			  break;
+    
+
+             }//switch1
+	  
+
+   }//while1
+
+
+}//main
+
+
+
+
+
+#include <stdio.h>
+int main()
+{   
+       int a = 10;
+       int b = 20;
+       int c;
+       printf("Swapping the numbers\n");
+       c = a;
+       a = b;
+       b = c;
+       printf("After swapping, the number in a is %d and the number in b is:%d",a, b);
+}
+
+#include<stdio.h>
+int main()
+{
+
+	void swap_values (int *, int *);
+
+	int i = 10;
+	int j = 20;
+
+	swap_values(&i, &j);
+
+	printf("The value after swap is:%d %d", i , j);
+}
+
+
+void swap_values (int *a, int *b)
+{
+	*a = *a+*b;  
+	*b = *a-*b;
+	*a = *a-*b;
+}	
+
+#include<stdio.h>
+int main()
+{
+   float k;
+
+   printf("Please enter \n");
+   scanf("%f", &k);
+
+   switch((int)k)
+   {
+    case 3: printf("three");
+	    break;
+    
+    case 4: printf("four");
+	    break;
+
+    default: printf("wrong");
+	     break;
+   }
+
+}
+#include<stdio.h>
+#include<unistd.h>
+int main()
+{
+	close(1);
+	printf("Hjkhkjhk");
+	printf("Hjkhkjhk");
+	printf("Hjkhkjhk");
+	printf("Hjkhkjhk");
+	printf("Hjkhkjhk");
+	printf("Hjkhkjhk");
+	printf("Hjkhkjhk");
+	printf("Hjkhkjhk");
+	write(1, "hjhj", 4);
+	sleep(1);
+	for(;;);
+}
+#include <stdio.h>
+int main()
+{
+
+        int i = 10,j,s=0;
+
+	while(i >= 0)
+        {
+		j = i;
+		while (j >= 0)
+		{
+			printf(" ");
+			j--;
+		}
+		printf("*");
+		
+		int k = s;
+
+		while (k >= 0)
+		{
+			printf(" ");
+			k--;
+		}
+		printf("*\n");
+		s++;
+		i--;
+
+	}
+
+	int b = 0;
+
+	while(b <= 10)
+	{
+	    printf("*");
+	    b++;
+	}
+}
+
